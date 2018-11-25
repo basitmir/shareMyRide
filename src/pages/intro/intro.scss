@@ -1,0 +1,155 @@
+
+
+page-intro {
+
+    //.foot{
+     // $grid-padding-width:100px;
+     
+     
+      ion-grid
+       {
+             height:100vh;
+       } 
+     .swiper-pagination-bullet-active{
+          background:white; 
+          }
+          
+      //.swiper-pagination {
+       //top:620px;
+     //   bottom:inherit;
+    //  }
+    //  }
+      //}  
+      
+      .first{
+          background-image: url('../assets/imgs/giphy.gif');
+          background-position: center;
+         // height: 100%;
+        //  min-height:100%;
+         // background-size: cover;
+          background-repeat: no-repeat;
+         // width: 100%;
+          background-size: 100% 100%;
+      //  min-width: 100%;
+      }
+      
+      .second{
+          background-image: url('../assets/imgs/nightwalk.jpg');
+          background-position: center;
+          height: 100%;
+          //background-size: cover;
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+          font-size:17px;
+          
+          
+  
+      }
+      .secondlogo{
+         position: relative;
+     bottom:800px;}
+     
+    #lastpage{
+      position: relative;
+      bottom:210px;
+    }
+    #getstarted{
+        position: relative;
+        top:350px;
+    }
+    #threeicons{
+        color:#F4AA16;
+        zoom:2.0;
+    }
+      
+      .third{
+          background-image: url('../assets/imgs/bandw.jpg');
+          background-position: center;
+          height: 100%;
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+          font-size: 16px;
+  
+  
+      }
+      .fourth{
+          background-image: url('../assets/imgs/night3.png');
+          background-position: center;
+          height: 100%;
+          background-size: cover;
+          background-repeat: no-repeat;
+          font-size: 16px;
+      }
+      .fifth{
+          background-image: url('../assets/imgs/night6.jpg');
+          background-position: center;
+          height: 100%;
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+          font-size: 16px;
+      }
+      #qoute{
+          position: relative;
+          right: 55px;
+          bottom:85px;
+          font-family:'Courier New', Courier, monospace;
+          
+      }
+   /*   #logo{
+       position: relative;
+         bottom:245px;
+      
+      
+   }*/
+    
+      #icons{
+          color:#FEFEFE;
+          position: relative;
+          left: 122px;
+         // left:88px;
+          bottom: 16px;
+         // bottom: 14px;
+      }    
+      #plane{
+          color: #009f75;
+          position: relative;
+          left: 102px;
+          bottom: 98px;
+      }
+   
+      #ecofriendly{
+          position: relative;
+          bottom:-46px;
+          right:98px;
+          
+      }
+      #timesaving{
+          position: relative;
+          bottom:102px;
+          left:125px;
+      }
+      #reduce{
+          position:relative;
+          bottom:20px;
+      }
+      #cost{
+          position:relative;
+          top:80px;
+          right:135px; 
+  
+      }
+      
+      #social{
+          position: relative;
+          top:-65px;
+          left:125px;
+      }
+      img{
+        height: 13vh;
+        width: auto;
+        margin: auto;
+        display: block;
+      }
+  }
+  
+  

@@ -1,0 +1,178 @@
+page-login {
+       
+    .scroll-content {
+        display: flex;
+        flex-direction: column;
+        //border-radius: 0px!important;
+        overflow: auto;
+
+    }
+    .swiper-slide:not(.swiper-slide-active) > div {
+        display:none;
+      }
+      ::-webkit-scrollbar
+{
+width: 0px!important;
+background-color: white !important;
+}
+
+
+ .inner{
+     width:85%;
+     padding-left:8vh ;
+ }
+    ion-content{
+        
+        background-image: url('../assets/imgs/night20.jpg') ;
+        background-position: center;
+        height:100%;
+        //width:100%;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        
+        
+        //text-align: right;
+        
+        
+       }
+       
+       //.login{text-align: center; width:100vw;}
+    .no-scroll .scroll-content{
+        //overflow: hidden;
+    }
+    #qoute{
+        position: relative;
+       // right: 55px;
+       font-size: 18px;
+        bottom:78px;
+        left:-58px;
+        font-family:'Courier New', Courier, monospace;
+    }
+    #logo{
+    // position: relative;
+      // bottom:238px;
+       // margin: auto;
+        text-align: center;    
+      
+    }
+  
+    //.icons
+    ion-icon {
+        color:white;
+        position:relative;
+        left:102px;
+        bottom:15px;
+        zoom:1.1;
+    }//
+   // ion-title{
+   // color:#FEFEFE;
+    //    position: relative;
+   // left: 118px;
+    //    bottom: 16px;
+       
+      //  display: flex;
+   
+  .plane  {
+        color: #009f75;
+        position: relative;
+       left: 93px;
+       bottom: 80px;
+        
+    }
+   .label{
+       background-color:rgba(255,255,255,0.0);
+       
+   } 
+
+  .login{
+    width:85%;
+     // position: absolute;
+     // right:90px;
+     // right: 0px;
+      margin: auto;
+      
+
+//width:100%;
+   //  background-color:black;
+   //  opacity: 0.7;
+      
+      
+      
+      
+    }
+    ion-input
+{
+    color:whitesmoke;
+
+    //text-align:center;
+}
+
+input,
+textarea,
+select {
+    outline: 0;
+}
+
+    .text{
+        text-align: center;
+       // margin-top:30vh;
+        color:white;
+        //margin-bottom:1vh;
+            
+    }
+
+    .loginbutton{ 
+     
+        width:95%;
+       // position: fixed;
+        //top:63vh;
+        //right:5%;
+    }
+    .mybutn{
+       // margin-bottom:1vh;
+        width:95%;
+        text-align: center;
+        padding-left:5.5vh;
+    }
+    .fb{
+       // height:10%;
+     //background-size:cover;
+      // position: absolute;
+     right:1vh;
+      width: 45%;
+     background-size: auto 100%;
+     background-repeat: no-repeat;
+     background-position:center;
+     margin-bottom:5vh;
+      //height: auto;
+      opacity:0.8 ;
+    }
+    .google{
+        left:1vh;
+        width:45%;
+      background-size: auto 100%;
+      background-repeat: no-repeat;
+      background-position:center;
+      margin-bottom:5vh;
+      background-color: #d34836;
+      opacity:0.8 ;
+    }
+    img{
+        height: 11vh;
+        width: auto;
+        margin: auto;
+        display: block;
+      }
+}
+
+.alert-md .alert-title {
+    font-size: 32px;
+    font-weight: bold;
+    color:#009f75;
+  }
+  
+  .alert-md .alert-sub-title {
+      color:#009f75;
+      font-weight: bold;
+    font-size: 20px;
+  }

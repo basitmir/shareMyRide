@@ -1,0 +1,116 @@
+<!--
+  Generated template for the FindridePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+ -->
+<ion-header no-shadow no-border color="mycolor">
+
+  <ion-navbar color="mycolor" showBackButton>
+  
+  <ion-searchbar placeholder="Search Destination"  [(ngModel)]="query"(ionChange)="searchDestination(query)"></ion-searchbar>
+  <ion-buttons right>
+  <button ion-button>
+  <ion-icon  style="font-size:25px" color="mywhite" name="more"></ion-icon></button></ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content >
+
+  <div *ngIf="!num > 0">
+ <ion-card no-padding *ngFor="let shareDetails of shareRideDetails$ | async " > 
+         <ion-card-content no-padding>
+  <ion-list  >
+             
+     <ion-item detail-push navPush='MoredetailsPage' [navParams]='{shareDetails:shareDetails}'>
+
+        <ion-avatar item-left>
+
+             <img src="/assets/imgs/me.jpg" alt="Avatar">
+            </ion-avatar>
+             <h2 style="color:#009f75">{{shareDetails.firstName}} {{shareDetails.lastName}}</h2> 
+             <p>{{shareDetails.phoneNo}}</p> 
+             </ion-item> 
+                       <ion-label text-center color="mycolor"style="font-weight:bold">{{shareDetails.tripType |uppercase}}</ion-label> 
+          <div class="size">
+             <ion-item>
+          <ion-icon  item-left color="origin" name="ios-pin-outline"><span>&nbsp;&nbsp;&nbsp;ORIGIN :&nbsp;
+           <span style="color:green;font-size:15px">{{shareDetails.origin | titlecase}}</span></span></ion-icon>
+         <!-- <ion-label >ORIGIN:</ion-label>  -->
+          <!-- <ion-label style="font-weight:bold;font-size:24px">{{shareDetails.origin | titlecase}}</ion-label>  -->
+     </ion-item>
+ 
+              <ion-item>
+          <ion-icon  item-left color="danger" name="ios-flag-outline"><span>&nbsp;&nbsp;&nbsp;DESTINATION :&nbsp;
+          <span style="color:#f53d3d;font-size:15px">{{shareDetails.destination | titlecase}}</span> </span></ion-icon>
+         
+               </ion-item>
+               <!--  
+            <ion-item>
+            <ion-icon  item-left color="stopover" name="ios-flag-outline" ><span>&nbsp;&nbsp;&nbsp;STOPOVER POINTS :&nbsp;
+           <span style="color:gold;font-size:15px">{{shareDetails.stopover | titlecase}}</span> </span></ion-icon>
+         
+          </ion-item>      
+
+          <ion-item >
+          <ion-icon  item-left color="dark" name="ios-calendar-outline" ><span>&nbsp;&nbsp;&nbsp;DEPARTURE DATE :&nbsp;
+           <span style="color:#222;font-size:15px">{{shareDetails.date}}</span> </span></ion-icon>
+        
+         </ion-item>  
+
+         <ion-item > 
+          <ion-icon  item-left color="fbcolor" name="ios-clock-outline" ><span>&nbsp;&nbsp;&nbsp;DEPARTURE TIME :&nbsp;
+          <span style="color:#2d4373;font-size:15px">{{shareDetails.time}}</span> </span></ion-icon>
+          
+         </ion-item>
+
+          <ion-item>
+          <ion-icon  item-left color="fbcolor" name="ios-clock-outline"><span>&nbsp;&nbsp;&nbsp;RETURN TIME :&nbsp;
+           <span style="color:#2d4373;font-size:15px">{{shareDetails.returnTime}}</span></span></ion-icon>
+         
+         </ion-item>-->
+
+
+     </div>
+      </ion-list> 
+  </ion-card-content>
+  </ion-card> 
+</div>
+
+<div *ngIf="num > 0">
+<ion-card no-padding *ngFor="let shareDetails of rideDetails " >  
+         <ion-card-content no-padding>
+  <ion-list>
+             
+     <ion-item detail-push navPush='MoredetailsPage' [navParams]='{shareDetails:shareDetails}'>
+
+        <ion-avatar item-left>
+
+             <img src="/assets/imgs/me.jpg" alt="Avatar">
+            </ion-avatar>
+             <h2 style="color:#009f75">{{shareDetails.firstName}} {{shareDetails.lastName}}</h2> 
+             <p>{{shareDetails.phoneNo}}</p> 
+             </ion-item> 
+                       <ion-label text-center color="mycolor"style="font-weight:bold">{{shareDetails.tripType |uppercase}}</ion-label> 
+          <div class="size">
+             <ion-item>
+          <ion-icon  item-left color="origin" name="ios-pin-outline"><span>&nbsp;&nbsp;&nbsp;ORIGIN :&nbsp;
+           <span style="color:green;font-size:15px">{{shareDetails.origin | titlecase}}</span></span></ion-icon>
+        
+     </ion-item>
+ 
+              <ion-item>
+          <ion-icon  item-left color="danger" name="ios-flag-outline"><span>&nbsp;&nbsp;&nbsp;DESTINATION :&nbsp;
+          <span style="color:#f53d3d;font-size:15px">{{shareDetails.destination | titlecase}}</span> </span></ion-icon>
+         
+               </ion-item>
+            
+
+
+     </div>
+      </ion-list> 
+  </ion-card-content>
+  </ion-card> 
+</div>
+</ion-content>

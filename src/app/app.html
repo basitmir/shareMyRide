@@ -1,0 +1,119 @@
+<!-- <ion-menu [content]="content"> -->
+
+
+<!-- <ion-content padding> -->
+<!-- <ion-grid no padding> -->
+  <!-- <ion-row align-items-end> -->
+    <!-- <ion-col col auto> -->
+     <!-- <ion-icon -->
+<!-- </ion-content> -->
+
+
+<ion-menu [swipeEnabled]="false" [content]="content">
+
+          
+          <ion-card color="mycolor" style="width:auto" class="profileview" no-margin ><ion-card-content text-center>
+          
+                             
+                             <ion-item color="mycolor">
+                            <ion-avatar class="avatar">
+                               <img src="/assets/imgs/profile.png">
+                               </ion-avatar></ion-item>
+                         <h6 style ="color:white">{{firstName | uppercase}} {{lastName | uppercase}}</h6>
+                         <!-- color:#758692 -->
+                            
+                <p style="font-family:opne-sans; font-size:14px;color:black;margin-top:1.5vh">{{email}}</p>
+                </ion-card-content></ion-card>
+      
+        
+  
+             <ion-list>
+             <button ion-item style="margin-top:1.2vh"(click)="onsidemenu(profilepage)">
+            <ion-icon  color="mycolor" name="ios-person" item-left></ion-icon>
+            
+            <span style="font-weight:bold">PROFILE</span>
+                  </button>
+                
+    
+
+
+
+       
+            <button ion-item style="margin-top:1.2vh"(click)="onsidemenu(ridepage)">
+            <ion-icon color="mycolor" name="ios-search" item-left></ion-icon>
+          
+             <span style="font-weight:bold">FIND RIDE</span>
+            </button>
+                   <!-- <h4 style="font-weight:bold;color:black;font-size:20px;letter-spacing0.5px;margin-top:1.2vh">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FIND RIDE</h4> -->
+                   
+
+
+          
+        <button ion-item style="margin-top:1.2vh" (click)="onsidemenu(offerpage)">
+            <ion-icon color="mycolor" name="ios-people" item-left></ion-icon>
+              
+                   <!-- <h4 style="font-weight:bold;color:black;font-size:20px;letter-spacing0.5px;margin-top:1.2vh">&nbsp;&nbsp;&nbsp;&nbsp;OFFER RIDE</h4> -->
+          
+                   <span style="font-weight:bold">OFFER RIDE</span>
+                  </button>       
+          
+           <button ion-item style="margin-top:1.2vh" (click)="onsidemenu(mytripspage)">
+            <ion-icon color="mycolor" name="ios-send" item-left></ion-icon>
+                  
+                   <!-- <h4 style="font-weight:bold;color:black;font-size:20px;letter-spacing0.5px;margin-top:1.2vh">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MY TRIPS</h4> -->
+              
+                 <span style="font-weight:bold">MY TRIPS</span>
+                 </button>
+
+           <button ion-item style="margin-top:1.2vh">
+            <ion-icon color="mycolor" name="ios-settings" item-left></ion-icon>
+        
+               <span style="font-weight:bold">SETTINGS</span>
+                   <!-- <h4 style="font-weight:bold;color:black;font-size:20px;letter-spacing0.5px;margin-top:1.2vh">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SETTINGS</h4> -->
+                   </button>
+
+
+
+
+
+
+
+
+
+           <button ion-item style="margin-top:1.2vh">
+            <ion-icon  color="mycolor" name="md-share" item-left></ion-icon>
+                  
+                   <span style="font-weight:bold">SPREAD THE WORD</span>
+                   <!-- <h4 style="font-weight:bold;color:black;font-size:20px;letter-spacing0.5px;margin-top:1.2vh">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SPREAD THE WORD</h4> -->
+                   </button>
+
+             
+
+
+            
+
+
+        <button ion-item style="margin-top:1.2vh">
+            <ion-icon color="mycolor" name="ios-star" item-left></ion-icon>
+                
+                 <span style="font-weight:bold">RATE US</span>
+                   <!-- <h4 style="font-weight:bold;color:black;font-size:20px;letter-spacing0.5px;margin-top:1.2vh">&nbsp;&nbsp;&nbsp;&nbsp;RATE US</h4> -->
+                   </button>
+           
+
+
+          <button ion-item style="margin-top:1.2vh" (click)="onLogout()">
+            <ion-icon color="mycolor" name="ios-power" item-left></ion-icon>
+                
+                  <span style="font-weight:bold">LOGOUT</span>
+                   <!-- <h4 style="font-weight:bold;color:black;font-size:20px;letter-spacing0.5px;margin-top:1.2vh">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LOGOUT</h4> -->
+                   </button>
+
+
+        
+         </ion-list>
+                        
+          
+  
+
+</ion-menu><ion-nav  [root]="rootPage" #content></ion-nav >

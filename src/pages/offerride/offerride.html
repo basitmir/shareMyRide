@@ -1,0 +1,400 @@
+<!--
+  Generated template for the OfferridePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+<div *ngIf="[currentIndex]==0">
+
+ <ion-navbar color="mycolor" hideBackButton>
+                  <ion-title>Offer a Ride </ion-title>
+                   <ion-buttons left style="margin-top:-4.8vh">
+    <button ion-button (click)="goToHome()">
+              <ion-icon style="font-size:23px" name="md-arrow-back"></ion-icon>
+              </button>
+    </ion-buttons>
+                  </ion-navbar>
+
+</div>
+
+<div *ngIf="[currentIndex]==1">
+<ion-navbar color="mycolor">
+    <ion-title>Offer a Ride</ion-title>
+     <!--  -->
+    <ion-buttons left style="margin-top:-4.8vh">
+    <button ion-button (click)="prev()">
+              <ion-icon style="font-size:23px" name="md-arrow-back"></ion-icon>
+              </button>
+    </ion-buttons>
+</ion-navbar></div>
+
+
+<div *ngIf="[currentIndex]==2">
+<ion-navbar color="mycolor">
+    <ion-title>Offer a Ride</ion-title>
+    <ion-buttons left style="margin-top:-4.8vh">
+    <button ion-button (click)="prev()">
+              <ion-icon style="font-size:23px" name="md-arrow-back"></ion-icon>
+              </button>
+    </ion-buttons>
+  </ion-navbar>
+ </div>
+
+
+</ion-header>
+    
+<ion-content >
+    
+    
+<!-- <p *ngIf="submitAttempt" style="color:red">Please fill out all details accurately.</p> -->
+         <form [formGroup]="form">
+           <ion-slides #slides (ionSlideDidChange)="slideChanged()">
+              
+                <ion-slide class="form1" #slide1  >
+                  
+                    
+                
+               <div  formGroupName="form1" >
+                 
+           <p *ngIf="submitAttempt" style="color:red;font-size:15px">*Please fill out all details accurately.</p>
+                 <ion-row  radio-group formControlName="radio"  [(ngModel)]="sharerides.tripType" >
+                    <ion-col>
+                         <ion-item no-padding>
+                        <ion-label text-center>One Way Trip</ion-label>
+              <ion-radio value="ONE WAY TRIP"  checked></ion-radio>
+        </ion-item>
+      </ion-col>
+        <ion-col >
+         <ion-item no-padding>
+            <ion-label text-center>Return Trip</ion-label>
+            
+                <ion-radio value="RETURN TRIP" ></ion-radio>
+              </ion-item>
+              </ion-col>
+              
+
+                       
+         </ion-row>
+        
+         
+         <!-- <p *ngIf="radio.errors && radio.errors.required" style="color:red;padding-left:70px;font-size:15px" 
+             text-left no-lines no-margin>*Type of trip is required</p> -->
+         <ion-grid no-padding wrap responsive-md >
+   
+         
+            <ion-row responsive-md>
+               <ion-col>
+         <ion-item>
+          <ion-icon  item-left color="origin" name="ios-pin-outline"></ion-icon>
+         <ion-label floating>ORIGIN</ion-label>
+        
+         <ion-input class="autocomplete"  id="googlePlaces1" formControlName="origin" type="text" required [(ngModel)]="sharerides.origin"></ion-input>
+         
+         
+       <!-- / <h1 *ngIf="origin.errors.minlength">this is error</h1> -->
+         </ion-item> </ion-col></ion-row>
+      
+             <p *ngIf="origin.touched && origin.invalid" style="color:red;padding-left:70px;font-size:15px"
+             text-left no-lines no-margin>*Origin is required</p> 
+        <!-- <p *ngIf="origin.errors && origin.errors.required" style="color:red;padding-left:70px;font-size:15px" -->
+             <!-- text-left no-lines no-margin>*Origin is required</p> -->
+              <p *ngIf=" origin.errors && origin.errors.minlength" style="color:red;padding-left:70px;font-size:15px"
+              text-left no-lines no-margin>*Origin must be at least 3 characters long </p>
+               <p *ngIf="origin.errors && origin.errors.pattern" style="color:red;padding-left:70px;font-size:15px"
+              text-left no-lines no-margin>*Enter a valid origin </p>
+          
+          
+          
+          <ion-row responsive-md >
+               <ion-col>
+         <ion-item>
+          <ion-icon  item-left color="danger" name="ios-flag-outline"></ion-icon>
+         <ion-label floating>DESTINATION</ion-label>
+        
+         <ion-input  class="autocomplete" id="googlePlaces2"  formControlName="destination" type="text" required  [(ngModel)]="sharerides.destination"></ion-input>
+         
+         </ion-item> </ion-col></ion-row>
+          <p *ngIf="destination.touched && destination.invalid" style="color:red;padding-left:70px;font-size:15px"
+             text-left no-lines no-margin>*Destination is required</p> 
+            
+              <p *ngIf=" destination.errors && destination.errors.minlength" style="color:red;padding-left:70px;font-size:15px"
+              text-left no-lines no-margin>*Destination must be at least 3 characters long </p>
+               <p *ngIf="destination.errors && destination.errors.pattern" style="color:red;padding-left:70px;font-size:15px"
+              text-left no-lines no-margin>*Enter a valid destination </p>
+          
+          
+          
+           <ion-row responsive-md> 
+               <ion-col>
+         <ion-item >
+          <ion-icon  item-left color="stopover" name="ios-flag-outline" ></ion-icon>
+         <ion-label floating>STOPOVER POINTS</ion-label>
+        
+         <ion-input  class="autocomplete" id="googlePlaces3" formControlName="stopover" type="text"  required [(ngModel)]="sharerides.stopover"></ion-input>
+         
+         </ion-item> </ion-col></ion-row>
+          <p *ngIf="stopover.touched && stopover.invalid" style="color:red;padding-left:70px;font-size:15px"
+             text-left no-lines no-margin>*Stopover point is required</p> 
+            <div *ngIf="stopover.errors">
+              <p *ngIf="stopover.errors.minlength" style="color:red;padding-left:70px;font-size:15px"
+              text-left no-lines no-margin>*Stopover must be at least 3 characters long </p>
+               <p *ngIf="stopover.errors && stopover.errors.pattern" style="color:red;padding-left:70px;font-size:15px"
+              text-left no-lines no-margin>*Enter a valid Stopover </p>
+           </div>
+           
+           
+           
+            <ion-row responsive-md>
+               <ion-col>
+        <ion-item >
+          <ion-icon  item-left color="dark" name="ios-calendar-outline" ></ion-icon>
+          <ion-label floating>START DATE</ion-label>
+         <ion-datetime formControlName="date" placeholder=" " displayFormat="DD-MM-YYYY" pickerFormat="DDD-MMM-YYYY" max="2020" [min]="today"name="date"  required
+            [(ngModel)]="sharerides.date"></ion-datetime>
+         </ion-item> </ion-col></ion-row>
+              <p *ngIf="date.touched && date.invalid" style="color:red;padding-left:70px;font-size:15px"
+              text-left no-lines no-margin>*Date is required</p>
+             
+             
+             
+              <ion-row responsive-md>
+               <ion-col>
+         <ion-item > 
+          <ion-icon  item-left color="fbcolor" name="ios-clock-outline" ></ion-icon>
+          <ion-label floating>START TIME</ion-label>
+         <ion-datetime formControlName="time" displayFormat="hh-mm A" pickerFormat="hh-mm A"   required
+           [(ngModel)]="sharerides.time"></ion-datetime>
+         </ion-item> </ion-col></ion-row>
+              <p *ngIf="time.touched && time.invalid" style="color:red;padding-left:70px;font-size:15px"
+              text-left no-lines no-margin>*Time is required</p>
+              
+            <div *ngIf="radio.value =='RETURN TRIP'">
+              <ion-row responsive-md >
+               <ion-col>
+         <ion-item >
+          <ion-icon  item-left color="fbcolor" name="ios-clock-outline" ></ion-icon>
+          <ion-label floating>RETURN TIME</ion-label>
+         <ion-datetime formControlName="returntime" displayFormat="hh-mm A" pickerFormat="hh-mm A"  required
+            [(ngModel)]="sharerides.returnTime"></ion-datetime>
+         </ion-item>
+         </ion-col>
+           </ion-row>
+             <p *ngIf="returntime.value== 'null'" style="color:red;padding-left:70px;font-size:15px" 
+                      text-left no-lines no-margin>*Return time is required</p> 
+                      
+               </div> 
+         </ion-grid>
+         </div>
+        
+  </ion-slide>
+
+
+
+
+  <ion-slide #slide2>
+ <div formGroupName="form2">
+  
+      
+ <ion-list-header no-lines>FARE PER CUSTOMER</ion-list-header>
+<p *ngIf="submitAttempt" style="color:red;font-size:15px">*Please fill out all details accurately.</p> 
+            
+         <ion-card>
+         <ion-card-content>
+          <ion-list>
+  
+ 
+    
+           <ion-item >  
+           <ion-icon  item-left color="origin" name="ios-pin-outline"></ion-icon>
+           <ion-label floating>From Location</ion-label>
+           <ion-input value= "{{origin.value}}" readonly="true"> </ion-input>    </ion-item>
+
+          
+           <ion-item>  <ion-icon  item-left color="danger" name="ios-flag-outline"></ion-icon>
+           <ion-label floating>To Location</ion-label>
+           <ion-input value="{{destination.value}}" readonly="true"></ion-input></ion-item>
+            
+             
+             <ion-row><ion-col width-4 OFFSET-7><ion-item>
+             
+           <ion-label >Rs.</ion-label>
+           <ion-input  type="number" placeholder="Enter" formControlName="price1" [(ngModel)]="sharerides.price1"></ion-input></ion-item>
+           
+            </ion-col>
+            </ion-row>
+           <p *ngIf="price1.touched && price1.invalid" style="color:red;padding-left:70px;font-size:15px"
+          text-left no-lines no-margin>*Price is required</p>
+</ion-list>
+</ion-card-content></ion-card>
+      
+        
+<ion-card>
+         <ion-card-content>
+          <ion-list>
+  
+ 
+    
+           <ion-item >  
+           <ion-icon  item-left color="origin" name="ios-pin-outline"></ion-icon>
+           <ion-label floating>From Location</ion-label>
+           <ion-input value= "{{origin.value}}" readonly="true"> </ion-input>    </ion-item>
+
+          
+           <ion-item>  <ion-icon  item-left color="danger" name="ios-flag-outline"></ion-icon>
+           <ion-label floating>To Location</ion-label>
+           <ion-input value="{{stopover.value}}" readonly="true" ></ion-input></ion-item>
+            
+             
+             <ion-row><ion-col width-4 OFFSET-7><ion-item>
+           <ion-label >Rs.</ion-label>
+           <ion-input type="number" placeholder="Enter" formControlName="price2" [(ngModel)]="sharerides.price2"></ion-input></ion-item>
+            </ion-col></ion-row>
+            <p *ngIf="price2.touched && price2.invalid" style="color:red;padding-left:70px;font-size:15px"
+          text-left no-lines no-margin>*Price is required</p>
+</ion-list>
+</ion-card-content></ion-card>
+<ion-card>
+         <ion-card-content>
+          <ion-list>
+  
+ 
+    
+           <ion-item >  
+           <ion-icon  item-left color="origin" name="ios-pin-outline"></ion-icon>
+           <ion-label floating>From Location</ion-label>
+           <ion-input value= "{{stopover.value}}" readonly="true"> </ion-input>    </ion-item>
+
+          
+           <ion-item>  <ion-icon  item-left color="danger" name="ios-flag-outline"></ion-icon>
+           <ion-label floating>To Location</ion-label>
+           <ion-input value="{{destination.value}}" readonly="true"></ion-input></ion-item>
+            
+             
+             <ion-row><ion-col width-4 offset-7><ion-item>
+           <ion-label >Rs.</ion-label>
+           <ion-input  type="number" placeholder="Enter" formControlName="price3" [(ngModel)]="sharerides.price3"></ion-input></ion-item>
+            </ion-col></ion-row>
+            <p *ngIf="price3.touched && price3.invalid" style="color:red;padding-left:70px;font-size:15px"
+          text-left no-lines no-margin>*Price is required</p>
+</ion-list>
+</ion-card-content></ion-card>  
+  
+  
+  </div>
+  </ion-slide>
+
+
+
+
+
+  <ion-slide #slide3>
+  
+
+
+
+<!-- style="margin-top:10vh" -->
+<div   formGroupName="form3">
+  <ion-list>
+    <ion-item no-lines>
+     <ion-icon  item-left color="mycolor" name="ios-subway-outline"></ion-icon>
+           <ion-label>
+             SELECT YOUR VEHICLE :
+             </ion-label></ion-item>
+             
+  <ion-row radio-group formControlName="selectradio" [(ngModel)]="sharerides.vehicle"> 
+
+
+  <ion-col> <ion-item>
+              <ion-label>Car</ion-label>
+               <ion-radio value="Car" checked></ion-radio> </ion-item></ion-col>
+
+               <ion-col>  <ion-item>
+              
+
+              <ion-label>Bike</ion-label>
+               <ion-radio value="Bike"></ion-radio> </ion-item></ion-col>
+
+
+               <ion-col>  <ion-item>
+              
+
+              <ion-label>Taxi</ion-label>
+               <ion-radio value="Taxi"></ion-radio> </ion-item></ion-col>
+   
+  </ion-row>  
+ <p *ngIf="selectradio.errors&& selectradio.errors.required" style="color:red;padding-left:70px;font-size:15px"
+             text-left no-lines no-margin>*Seats Available are required</p>       
+          <br>
+           <ion-item no-lines>
+           <ion-icon  item-left color="mycolor" name="ios-person-add-outline"></ion-icon>
+             <ion-label>SEATS AVAILABLE :</ion-label></ion-item>
+           
+           <ion-item> 
+
+                 <ion-label>Available Seats:</ion-label>
+                 <ion-select value="seats" formControlName="selectlist" [(ngModel)]="sharerides.seats">
+                   <ion-option value="1"> 1 seat</ion-option>
+                   <ion-option value="2"> 2 seats</ion-option>
+                   <ion-option value="3"> 3 seats</ion-option>
+                   <ion-option value="4"> 4 seats</ion-option>
+                   <ion-option value="5"> 5 seats</ion-option>
+                   <ion-option value="6"> 6 seats</ion-option>
+                   <ion-option value="7"> 7 seats</ion-option>
+                   <ion-option value="8"> 8 seats</ion-option>
+                 </ion-select>
+            </ion-item>
+            
+            <p *ngIf="selectlist.touched && selectlist.invalid" style="color:red;padding-left:70px;font-size:15px"
+             text-left no-lines no-margin>*Seats Available are required</p>
+            <br>
+            <ion-item no-lines>
+            <ion-icon  item-left color="mycolor" name="ios-contacts-outline"></ion-icon>
+             <ion-label> PREFERENCES :</ion-label></ion-item>
+           <ion-item> 
+                 
+                 <ion-label>Gender</ion-label>
+                 <ion-select value="gender" formControlName="selectgender" [(ngModel)]="sharerides.gender">
+                   <ion-option value="Male">Male</ion-option>
+                   <ion-option value="Female">Female</ion-option>
+                   <ion-option value="Both">Both</ion-option> 
+                 </ion-select>
+            </ion-item>
+            <p *ngIf="selectgender.touched && selectgender.invalid" style="color:red;padding-left:70px;font-size:15px"
+             text-left no-lines no-margin>*Preference required</p>
+           <br>
+           <ion-item>
+           <ion-icon  item-left color="mycolor" name="ios-people-outline"></ion-icon>
+            <ion-label>CHANNEL :</ion-label>
+</ion-item>           <ion-item>
+             
+
+    <ion-textarea formControlName="channel" maxLength="50" rows="2" placeholder="Enter the channel name to provide updates to users"
+       [(ngModel)]="sharerides.channel" required></ion-textarea>
+  </ion-item>
+   <p *ngIf="channel.touched && channel.invalid" style="color:red;padding-left:15px;font-size:15px"
+             text-left no-lines no-margin>*Channel Name required</p>
+              <p *ngIf="channel.errors && channel.errors.pattern" style="color:red;padding-left:15px;font-size:15px"
+              text-left no-lines no-margin>*Enter a valid Channel Name</p>
+
+  </ion-list></div>
+  </ion-slide>
+</ion-slides>
+
+
+</form>
+    </ion-content>
+    <ion-footer>
+ <div *ngIf="[currentIndex]==0"> 
+     <button block ion-button no-margin  color="mycolor" (click)="next()">Next</button>
+     <!-- <div *ngIf="!form1.valid"> -->
+      <!-- <p>please fill all the details</p></div> -->
+     
+     </div>
+     <div *ngIf="[currentIndex]==1"> 
+     <button  block ion-button no-margin  color="mycolor" (click)="next2()">Next</button></div>
+     <div *ngIf="[currentIndex]==2"> 
+     <button type="submit" block ion-button no-margin  color="mycolor" (click)="save(sharerides)" 
+     [disabled]="!form.valid" >Publish</button></div>
+    </ion-footer>
+    

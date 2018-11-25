@@ -1,0 +1,40 @@
+<ion-header no-shadow no-border color="mycolor" >
+  <ion-navbar color="mycolor">
+ <ion-searchbar #mySearchbar id="googlePlaces" placeholder="Search Destination" [type]="end" 
+     (change)="calculateAndDisplayRoute($event)"   ></ion-searchbar>
+
+<!-- (ionInput)="stop($event)" debounce="10000" -->
+
+  <div style="text-align:center" *ngIf="hasValue && distance!=NaN" no-margin no-padding >
+  <span   style="font-size:12px;color:white;background-color:#009f75;float:left">
+            <span style="font-weight:bold">Distance</span> : {{distance}}Km</span>
+    <span style="font-size:12px;color:black;background-color:#009f75;font-weight:bold"><ion-icon name="ios-speedometer-outline"></ion-icon></span>
+    <span  style="font-size:12px;color:white;background-color:#009f75;float:right">
+     <span style="font-weight:bold">Time</span> : {{time}}min</span>
+    </div>
+   <ion-buttons left >
+    <button ion-button  menuToggle>
+              <ion-icon name="menu"></ion-icon>
+              </button>
+    </ion-buttons>      
+    <ion-buttons right >
+    <button ion-button (click)="onNotification()">
+              <ion-icon style="font-size:23px" name="md-notifications"></ion-icon>
+              </button>
+    </ion-buttons>      
+    
+  </ion-navbar>
+  
+</ion-header>
+
+
+  <ion-content>
+  
+
+    <div id="map"></div>
+</ion-content>
+<ion-footer no-padding no-margin>
+<!-- <span  *ngIf="hasValue" style="font-size:10px;color:white;background-color:#009f75;float:right;padding: 0px 34px 0px 34px"> 
+Travel Mode: Driving</span>-->
+</ion-footer>
+<!-- <ion-searchbar placeholder="Search Destination" [(ngModel)]="Destination" (click)="calculateAndDisplayRoute()"></ion-searchbar> -->

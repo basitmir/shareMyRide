@@ -1,0 +1,84 @@
+page-offerride {
+    
+        .scroll-content {
+            display: flex;
+            flex-direction: column;
+            //border-radius: 0px!important;
+            overflow: auto;
+
+        }
+     /*   ::-webkit-scrollbar-track
+{
+    
+
+border-radius: 0px!important;
+background-color: white!important;
+}*/
+.swiper-slide:not(.swiper-slide-active) > div {
+    display:none;
+  }
+ion-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 90px 1px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+::-webkit-scrollbar
+{
+width: 0px!important;
+background-color: white !important;
+}
+
+.scroll-content:not(.show-scrollbar) {
+    margin-right: -8px;
+    overflow-y: scroll;
+    //background-color: white !important;
+}
+
+/*::-webkit-scrollbar-thumb
+{
+border-radius: 0px!important;
+
+background-color: white!important;
+}*/
+        ion-grid {
+            padding: 0;
+            height: 100%;
+        }
+     
+        ion-row {
+            flex: 1;
+        }
+    ion-header button {
+        position: absolute !important;
+        z-index: 5;
+      }
+      
+      
+      ion-title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0 90px 1px;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+      }
+    
+
+    
+}
+
+.alert-md .alert-title {
+    font-size: 32px;
+    font-weight: bold;
+    color:#009f75;
+  }
+  
+  .alert-md .alert-sub-title {
+    font-size: 20px;
+  }
+  

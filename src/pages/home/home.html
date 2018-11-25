@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar color="mycolor">
+ 
+   <ion-buttons left >
+    <button ion-button  menuToggle>
+              <ion-icon name="menu"></ion-icon>
+              </button>
+    </ion-buttons>          
+    <ion-buttons right>
+    <button ion-button (click)="onNotification()">
+              <ion-icon style="font-size:23px" name="md-notifications"></ion-icon>
+              </button>
+    </ion-buttons>        
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+<div class="block1">
+         
+           <!-- <p  style="font-family:open-sans;font-size:16px">Forgot your password?</p> -->
+         <!-- <div text-center> -->
+           <!-- <button class="loginbutton" ion-button color=mycolor round>Offer A Ride</button> -->
+           <!-- </div>  -->
+     <div text-center>
+        
+         <div> <ion-grid ><ion-row><ion-col style="top:16vh">
+          <button class="loginbutton" ion-button color=mycolor round (click)="goTo()">Offer A Ride</button><br>
+            <p class="text" style="font-family:open-sans;font-size:16px">Share your journey with co-travlers and cover all your fuel costs!</p>
+           </ion-col></ion-row></ion-grid></div></div>
+
+ </div>
+
+
+
+<div class="block2"> 
+
+
+      <!-- <div text-center> -->
+           <!-- <button class="loginbutton" ion-button color=mycolor round>Find A Ride</button> -->
+           <!-- </div> -->
+           <!-- Joyfull and comfortable travel, share your journey with all like you    -->
+         <div class="button-center">
+         
+         <div text-center >
+         <ion-grid ><ion-row><ion-col style="top:16vh">
+           <button text-center class="loginbutton" ion-button color=mycolor round (click)="goToRide()">Find A Ride</button><br>
+           <p class="text" style="font-family:open-sans;font-size:16px"> Joyfull and comfortable travel, share your journey with all like you</p>
+           </ion-col></ion-row></ion-grid></div></div>
+
+ </div>
+
+</ion-content>

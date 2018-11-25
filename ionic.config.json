@@ -1,0 +1,8 @@
+{
+  "name": "ShareMyRide",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "pro_id": "06c73704"
+}
