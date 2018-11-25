@@ -1,0 +1,42 @@
+ <form [formGroup]="signinform">   
+          <ion-grid no-padding text-center no-margin wrap responsive-md style="margin-top:15vh">                 <!-- <h1 style="color:white">this is it</h1> -->
+        <div>
+            <p *ngIf="submitAttempt" style="color:white; font-size:15px;text-align:center" no-margin>*Invalid login credentials</p>
+            <ion-list  no-lines class="login" >
+            <div class="inner"text-center>
+            <ion-row responsive-md><ion-col>
+            <ion-item class="label" >
+            <ion-label  style="font-size:20px;color:#009f75;font-weight:bold" stacked>Email</ion-label>
+            <ion-input type="text" placeholder="Enter Email" formControlName="email" [(ngModel)]="account.email" ></ion-input>
+            </ion-item> </ion-col></ion-row>  
+
+
+
+             
+            <ion-row responsive-md><ion-col>
+            <ion-item class="label">
+            <ion-label style="font-size:20px;color:#009f75; font-weight:bold"stacked>Password</ion-label>
+            <ion-input type="Password" placeholder="Enter Password" formControlName="password" [(ngModel)]="account.password"></ion-input>
+             </ion-item>  </ion-col></ion-row>
+
+             
+            
+         <div>
+         <p class="text" style="font-family:open-sans;font-size:16px">Forgot your password?</p>
+         <div text-center >
+           <button class="loginbutton" ion-button color=mycolor round (click)="login()">Login</button>
+           </div></div> 
+               </div><!--inner div close -->
+
+            <div text-center  style="margin-top:7vh">
+           <button text-center class="mybutn" ion-button color="mywhite" round outline (click)="onToSignup()">Sign Up</button>
+           </div>
+  
+       <button  item-left ion-button round   color=fbcolor class="fb" style="background-image:url('/assets/imgs/fblogo.png')"></button>
+       <button item-right ion-button round   color=danger class="google" style="background-image:url('/assets/imgs/google.png')"></button>
+      
+       </ion-list>
+              
+             </div>
+             </ion-grid>
+          </form>

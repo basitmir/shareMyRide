@@ -1,0 +1,15 @@
+  <ion-grid no-padding no-margin>
+          <ion-row no-padding no-margin>
+                 <ion-col col-10  >
+                 
+                  <ion-textarea  [(ngModel)]="content" placeholder="Enter message..."></ion-textarea>
+                 
+                 </ion-col>
+
+                 <ion-col col-2>
+                 
+                 <button clear ion-button (click)="send()"><ion-icon style="font-size:25px" name="send"></ion-icon></button>
+                 </ion-col>
+
+            </ion-row>
+     </ion-grid>

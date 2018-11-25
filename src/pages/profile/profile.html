@@ -1,0 +1,33 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="mycolor" hideBackButton>
+    <ion-title>Profile</ion-title>
+    <ion-buttons left style="margin-top:-4.8vh">
+    <button ion-button (click)="goToHome()">
+              <ion-icon style="font-size:23px" name="md-arrow-back"></ion-icon>
+              </button>
+    </ion-buttons>
+
+     <ion-buttons right >
+    <button ion-button (click)="oneditProfile()" style="margin-left:-4.8vh;padding-bottom:5vh">
+              <ion-icon style="font-size:23px" name="md-contact"></ion-icon>
+              </button>
+    </ion-buttons> 
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+<profileview></profileview>
+
+</ion-content>
+<ion-footer>
+<button no-margin ion-button block (click)="signout()">LOGOUT</button>
+</ion-footer>

@@ -1,0 +1,59 @@
+<!-- Generated template for the ProfileviewComponent component 
+<div class="profileview">
+<img class="profileviewimage" src="../assets/imgs/profile.png" alt="">
+  
+</div>-->
+ <ion-grid no-padding wrap responsive-md  >
+ 
+ <ion-card color="mycolor" style="width:auto" no-margin class="profileview"><ion-card-content no-margin no-padding text-center>
+          
+                             <ion-row responsive-md align-items-start>
+               <ion-col align-self-start>
+                             <ion-item color="mycolor">
+                            <ion-avatar class="avatars">
+                               <img src="/assets/imgs/profile.png">
+                               </ion-avatar></ion-item></ion-col></ion-row>
+                               </ion-card-content></ion-card>
+                               
+
+
+<div *ngIf="userProfile">
+ <ion-card class="content" style="width:auto" no-margin>
+<ion-card-content  no-margin no-padding>
+<ion-row responsive-md align-items-center>
+               <ion-col align-self-center>
+<ion-item>
+      <ion-label floating color="mycolor">Email</ion-label>
+      <ion-input [value]="userProfile.email" [readonly]="true"></ion-input>
+  </ion-item></ion-col></ion-row>
+
+
+
+  <ion-row responsive-md align-items-center>
+               <ion-col align-self-center>
+  <ion-item>
+      <ion-label floating color="mycolor">First Name</ion-label>
+      <ion-input [value]="userProfile.firstName | uppercase" [readonly]="true"></ion-input>
+  </ion-item></ion-col></ion-row>
+
+
+ <ion-row responsive-md align-items-end>
+               <ion-col align-self-end>
+  <ion-item>  
+      <ion-label floating color="mycolor">Last Name</ion-label>
+      <ion-input [value]="userProfile.lastName | uppercase" [readonly]="true"></ion-input>
+  </ion-item></ion-col></ion-row>
+
+
+
+  <ion-row responsive-md align-items-end>
+               <ion-col align-self-end>
+  <ion-item>
+      <ion-label floating color="mycolor">Phone Number</ion-label>
+      <ion-input [value]="userProfile.phone" [readonly]="true"></ion-input>
+  </ion-item> </ion-col></ion-row>
+</ion-card-content>
+
+ </ion-card></div>
+
+ </ion-grid>

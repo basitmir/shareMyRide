@@ -1,0 +1,142 @@
+<!--
+  Generated template for the MoredetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="mycolor" hideBackButton>
+                  <ion-title>Details</ion-title>
+                   <ion-buttons left>
+    <button ion-button (click)="back()">
+              <ion-icon style="font-size:23px" name="md-arrow-back"></ion-icon>
+              </button>
+    </ion-buttons>
+                  </ion-navbar>
+
+</ion-header>
+
+<ion-content> 
+<ion-card no-padding>  
+         <ion-card-content no-padding>
+  <ion-list  >
+             
+     <ion-item>
+
+        <ion-avatar item-left>
+
+             <img src="/assets/imgs/profile.png" alt="Avatar">
+            </ion-avatar>
+             <h2 style="color:#009f75">{{shareDetails?.firstName}} {{shareDetails?.lastName}}</h2> 
+             <p>{{shareDetails?.phoneNo}}</p> 
+             </ion-item> 
+                       <ion-label text-center color="mycolor"style="font-weight:bold">{{shareDetails?.tripType |uppercase}}</ion-label>
+                      <marquee style="font-size:12px;color:rgb(88, 85, 85);"direction="right" onmouseover="this.stop()" onmouseout="this.start()">
+                      For Updates Vist My Channel <span style="font-weight:bold;font-size:12px">#{{shareDetails?.channel}}</span></marquee>
+          <div class="size">
+             <ion-item>
+          <ion-icon  item-left color="origin" name="ios-pin-outline"><span>&nbsp;&nbsp;&nbsp;ORIGIN :&nbsp;
+           <span style="color:green;font-size:15px">{{shareDetails?.origin | titlecase}}</span></span></ion-icon>
+         <!-- <ion-label >ORIGIN:</ion-label>  -->
+          <!-- <ion-label style="font-weight:bold;font-size:24px">{{shareDetails.origin | titlecase}}</ion-label>  -->
+     </ion-item>
+ 
+              <ion-item>
+          <ion-icon  item-left color="danger" name="ios-flag-outline"><span>&nbsp;&nbsp;&nbsp;DESTINATION :&nbsp;
+          <span style="color:#f53d3d;font-size:15px">{{shareDetails?.destination | titlecase}}</span> </span></ion-icon>
+         
+               </ion-item>
+           
+            <ion-item>
+            <ion-icon  item-left color="stopover" name="ios-flag-outline" ><span>&nbsp;&nbsp;&nbsp;STOPOVER POINTS :&nbsp;
+           <span style="color:gold;font-size:15px">{{shareDetails?.stopover | titlecase}}</span> </span></ion-icon>
+         
+          </ion-item>      
+
+          
+           <ion-item>
+          <ion-icon  item-left color="danger" name="ios-bus-outline"><span>&nbsp;&nbsp;&nbsp;Vehicle :&nbsp;
+           <span style="color:#f53d3d;font-size:15px">{{shareDetails?.vehicle}}</span></span></ion-icon>
+         
+         </ion-item>
+          <ion-item>
+          <ion-icon  item-left color="dark" name="ios-add-circle-outline"><span>&nbsp;&nbsp;&nbsp;Available Seats :&nbsp;
+           <span style="color:#222;font-size:15px">{{shareDetails?.seats}}</span></span></ion-icon>
+         
+         </ion-item>
+          <ion-item>
+          <ion-icon  item-left color="secondary" name="ios-people-outline"><span>&nbsp;&nbsp;&nbsp;Preference :&nbsp;
+           <span style="color:#32db64;font-size:15px">{{shareDetails?.gender}}</span></span></ion-icon>
+         
+         </ion-item>
+         <ion-item >
+          <ion-icon  item-left color="dark" name="ios-calendar-outline" ><span>&nbsp;&nbsp;&nbsp;DEPARTURE DATE :&nbsp;
+           <span style="color:#222;font-size:15px">{{shareDetails?.date}}</span> </span></ion-icon>
+        
+         </ion-item>  
+
+         <ion-item > 
+          <ion-icon  item-left color="fbcolor" name="ios-clock-outline" ><span>&nbsp;&nbsp;&nbsp;DEPARTURE TIME :&nbsp;
+          <span style="color:#2d4373;font-size:15px">{{shareDetails?.time}}</span> </span></ion-icon>
+          
+         </ion-item>
+
+          <ion-item>
+          <ion-icon  item-left color="fbcolor" name="ios-clock-outline"><span>&nbsp;&nbsp;&nbsp;RETURN TIME :&nbsp;
+           <span style="color:#2d4373;font-size:15px">{{shareDetails?.returnTime}}</span></span></ion-icon>
+         
+         </ion-item>
+         <ion-item>
+                  <ion-list-header text-center>FARE PER CUSTOMER</ion-list-header> 
+         </ion-item>
+          <ion-item>
+          <ion-row><ion-col>
+          - {{shareDetails?.origin}}</ion-col></ion-row>
+           <ion-row><ion-col width-4 offset-7>
+           Rs. {{shareDetails?.price1}}/=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <!-- <button ion-button clear (click)="deleteDetails(shareDetails)">Join</button> -->
+            <ion-fab middle>
+   <button ion-fab mini color="mywhite" (click) ="messages('1')"><ion-icon color="mycolor" name="md-chatboxes"></ion-icon></button>
+ </ion-fab>
+  <!-- <ion-fab bottom >
+   <button ion-fab mini color="mywhite" (click) ="pay()"><ion-icon color="mycolor" name="md-chatboxes"></ion-icon></button>
+ </ion-fab>-->
+            </ion-col>
+           </ion-row>
+           <ion-row><ion-col>
+         - {{shareDetails?.destination}}
+         </ion-col></ion-row>
+          </ion-item>
+          <hr>
+           <ion-item><ion-row><ion-col>
+          - {{shareDetails?.origin}}</ion-col></ion-row>
+           <ion-row><ion-col width-4 offset-7>
+           Rs. {{shareDetails?.price2}}/=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <ion-fab middle >
+   <button ion-fab mini color="mywhite" (click) ="messages('2')"><ion-icon color="mycolor" name="md-chatboxes"></ion-icon></button>
+ </ion-fab> 
+           
+           </ion-col></ion-row>
+           <ion-row><ion-col>
+         - {{shareDetails?.stopover}}</ion-col></ion-row>
+          </ion-item>
+           <hr>
+           <ion-item><ion-row><ion-col>
+          - {{shareDetails?.stopover}}</ion-col></ion-row>
+           <ion-row><ion-col width-4 offset-7>
+           Rs. {{shareDetails?.price3}}/=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <ion-fab middle >
+         <button ion-fab mini color="mywhite" (click) ="messages('3')"><ion-icon color="mycolor" name="md-chatboxes"></ion-icon></button>
+         </ion-fab> 
+           </ion-col></ion-row>
+           <ion-row><ion-col>
+         - {{shareDetails?.destination}}</ion-col></ion-row>
+          </ion-item>
+         
+     </div>
+      </ion-list> 
+  </ion-card-content>
+  </ion-card> 
+
+</ion-content>

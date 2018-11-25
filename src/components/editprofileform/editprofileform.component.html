@@ -1,0 +1,45 @@
+<form [formGroup]="editprofileform">
+<ion-card>
+  <ion-card-content>
+     <ion-item>
+     <ion-label floating style="font-weight:bold">First Name</ion-label>
+     <ion-input type="text" [(ngModel)]="profile.firstName" formControlName="firstname"></ion-input>
+     </ion-item>
+
+     <p *ngIf="firstname.touched && firstname.invalid" style="color:red;font-size:15px"
+              no-lines no-margin>*Name is required</p> 
+              <p *ngIf="firstname.errors && firstname.errors.minlength" style="color:red;font-size:15px"
+               no-lines no-margin>*Name must be at least 3 characters long </p>
+               <p *ngIf="firstname.errors && firstname.errors.pattern" style="color:red;font-size:15px"
+         no-lines no-margin>*Enter a valid Name </p>
+
+      <ion-item>
+     <ion-label floating style="font-weight:bold">Last Name</ion-label>
+     <ion-input type="text" [(ngModel)]="profile.lastName" formControlName="lastname" ></ion-input>
+     </ion-item>
+     
+            <p *ngIf="lastname.touched && lastname.invalid" style="color:red;font-size:15px"
+             text-left no-lines no-margin>*Name is required</p> 
+              <p *ngIf="lastname.errors && lastname.errors.minlength" style="color:red;font-size:15px"
+              text-left no-lines no-margin>*Name must be at least 3 characters long </p>
+               <p *ngIf="lastname.errors && lastname.errors.pattern" style="color:red;font-size:15px"
+              text-left no-lines no-margin>*Enter a valid Name </p>
+
+
+      <ion-item>
+     <ion-label floating style="font-weight:bold">Phone Number</ion-label>
+     <ion-input  [(ngModel)]="profile.phone" maxlength="10" formControlName="phoneNumber"></ion-input>
+     </ion-item>
+      <p *ngIf="phoneNumber.touched && phoneNumber.invalid" style="color:red;font-size:15px"
+             text-left no-lines no-margin>*Phone Number is required</p>
+              <p *ngIf="phoneNumber.errors && phoneNumber.errors.minlength" 
+              style="color:red;font-size:15px" text-left no-lines no-margin>*Phone Number must be of 10 digits</p>
+              <p *ngIf="phoneNumber.errors && phoneNumber.errors.pattern" 
+              style="color:red;font-size:15px" text-left no-lines no-margin>*Phone Number should only contain digits</p>
+
+  </ion-card-content>
+</ion-card>
+
+<div class="save">
+ <button block type="submit" ion-button (click)="saveProfile()" [disabled]="!editprofileform.valid">Save</button>
+ </div>

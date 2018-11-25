@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color="mycolor">
+ 
+   <ion-buttons left >
+    <button ion-button  menuToggle swipeEnabled="true">
+              <ion-icon name="menu"></ion-icon>
+              </button>
+    </ion-buttons>  
+     <ion-buttons right >
+    <button ion-button (click)="onNotification()">
+              <ion-icon style="font-size:23px" name="md-notifications"></ion-icon>
+              </button>
+    </ion-buttons>               
+    <ion-title align="center" >Channels</ion-title>
+    <!-- style="margin-right:8vh" -->
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding >
+<ion-list >
+  <ion-item detail-push *ngFor="let channel of channelList | async" (click)="selectChannel(channel)">
+  <ion-label  color="mycolor"> #{{channel.name}}
+  <br/><span style="font-size:10px; color:rgb(88, 85, 85)">{{channel.owner}} |{{channel.phone}}|</span></ion-label>
+  <!-- <p>{{channel.owner}} {{channel.phone}}</p> -->
+  </ion-item>
+</ion-list>
+</ion-content>

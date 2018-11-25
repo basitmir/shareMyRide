@@ -1,0 +1,78 @@
+<form style="text-align:center" [formGroup]="signupform">
+      
+        <ion-grid no-padding wrap responsive-md >
+    
+            <ion-list no-lines class="signup"  > 
+             <!-- <ion-row responsive-md><ion-col> 
+              <ion-item class="label" > 
+            <ion-label  style="font-size:20px;color:#009f75;font-weight:bold" stacked>Name</ion-label>
+            <ion-input type="text" placeholder="Enter Name"  formControlName="name"></ion-input>
+           </ion-item>  </ion-col></ion-row>
+
+             <p *ngIf="name.touched && name.invalid" style="color:white;font-size:15px"
+             text-left no-lines no-margin>*Name is required</p> 
+              <p *ngIf="name.errors && name.errors.minlength" style="color:white;font-size:15px"
+              text-left no-lines no-margin>*Name must be at least 3 characters long </p>
+               <p *ngIf="name.errors && name.errors.pattern" style="color:white;font-size:15px"
+              text-left no-lines no-margin>*Enter a valid Name </p>-->
+
+       <ion-row responsive-md><ion-col>
+            <ion-item class="label">
+            <ion-label style="font-size:20px;color:#009f75; font-weight:bold"stacked>Email</ion-label>
+            <ion-input [(ngModel)]="account.email" type="email" placeholder="Enter Email" formControlName="email"></ion-input>
+            </ion-item></ion-col></ion-row>
+             <p *ngIf="email.touched && email.invalid" style="color:white;font-size:15px"
+             text-left no-lines no-margin>*Email is required</p>
+               <p *ngIf="email.errors && email.errors.pattern" style="color:white;font-size:15px"
+             text-left no-lines no-margin>*Email a valid email</p>
+
+            <!-- <ion-row responsive-md><ion-col> 
+             <ion-item class="label">
+            <ion-label style="font-size:20px;color:#009f75; font-weight:bold"stacked>Phone Number</ion-label>
+            <ion-input  placeholder="Enter Number" maxlength="10" formControlName="phoneNumber"></ion-input>
+            </ion-item></ion-col></ion-row>
+             <p *ngIf="phoneNumber.touched && phoneNumber.invalid" style="color:white;font-size:15px"
+             text-left no-lines no-margin>*Phone Number is required</p>
+              <p *ngIf="phoneNumber.errors && phoneNumber.errors.minlength" 
+              style="color:white;font-size:15px" text-left no-lines no-margin>*Phone Number must be of 10 digits</p>
+              <p *ngIf="phoneNumber.errors && phoneNumber.errors.pattern" 
+              style="color:white;font-size:15px" text-left no-lines no-margin>*Phone Number should only contain digits</p>
+                                                                  -->
+               <ion-row responsive-md><ion-col>
+             <ion-item class="label">
+            <ion-label style="font-size:20px;color:#009f75; font-weight:bold"stacked>Password</ion-label>
+            <ion-input [(ngModel)]="account.password" type="Password" placeholder="Enter Password" minlength="8" formControlName="password"></ion-input>
+            </ion-item></ion-col></ion-row>
+
+             <p *ngIf="password.touched && password.invalid" style="color:white;font-size:15px"
+             text-left no-lines no-margin>*Password is required</p>
+             <p *ngIf="password.errors && password.errors.minlength" 
+              style="color:white;font-size:15px" text-left no-lines no-margin>*Password must be at least 8 characters long</p>
+
+              <ion-row responsive-md><ion-col>
+             <ion-item class="label">
+                <ion-label style="font-size:20px;color:#009f75; font-weight:bold"stacked>Repeat Password</ion-label>
+            <ion-input type="Password" placeholder="Repeat Password" minlength="8" formControlName="repeatPassword"></ion-input>
+            </ion-item>
+             <p *ngIf="submitAttempt" style="color:white; font-size:15px;padding-right:40px;" no-margin>*Password mismatch</p>
+
+            </ion-col></ion-row>
+             <p *ngIf="repeatPassword.touched && repeatPassword.invalid" style="color:white;font-size:15px"
+             text-left no-lines no-margin>*Repeat Password</p>
+             
+          <ion-row><ion-col>
+            <div text-center style="padding-top:6vh;text-align:center" >
+           <button type="submit" style="width:230px"class="loginbutton" ion-button color=mycolor round
+            [disabled]="!signupform.valid"  (click)="register()">Create Account</button>
+     
+                </div>
+</ion-col></ion-row>
+            </ion-list>
+
+            
+               </ion-grid>
+            
+
+</form>
+
+              
