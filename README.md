@@ -3,6 +3,7 @@ Dynamic vehicle pooling and Ride-Sharing Application<br>
 FRONT END : IONIC <br>
 BACK END : FIREBASE<br>
 NOTE : Replace your firebase config details in firebase.credentials.ts<br>
+       And RUN:- (npm update) in your terminal
 <p align="left">
 <img src ="src/assets/imgs/ss.png" height="500">
 <img src ="src/assets/imgs/ss1.png" height="500">
