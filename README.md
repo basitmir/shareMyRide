@@ -1,6 +1,6 @@
 # shareMy-ride
 Dynamic vehicle pooling and Ride-Sharing Application<br>
-<a href="https://www.dropbox.com/s/nhwuydu6534q5qg/sharemyride.apk?dl=0">CLICK HERE TO DOWNLOAD THE APP</a><br>
+<a href="https://www.dropbox.com/s/nhwuydu6534q5qg/sharemyride.apk?dl=0">DOWNLOAD THE APP</a><br>
 FRONT END : IONIC <br>
 BACK END : FIREBASE<br>
 NOTE : Run these cmds in your terminal <br>
